@@ -23,14 +23,12 @@ function check_update() {
             updateBtn.innerHTML = "-立即更新-";
             alert(JSON.stringify(JSON.stringify(data), data.describe));
 
-            document.querySelector("#describe").innerHTML = data.describe || '无描述...';
+            document.querySelector("#describe").innerHTML = JSON.parse(data).describe || '无描述...';
             updateBtn.addEventListener("click", function(event) {
                 updateBtn.innerHTML = "正在升级，升级完毕应用将自动重启...";
-                setTimeout(function() {
-                    chcp.installUpdate(function(error) {
-                        updateBtn.innerHTML = "更新完成";
-                    })
-                }, 4000)
+                chcp.installUpdate(function(error) {
+                    updateBtn.innerHTML = "更新完成";
+                })
             })
         } else {
             updateBtn.innerHTML = "你当前是最新版本";
