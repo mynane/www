@@ -21,6 +21,7 @@ function check_update() {
         var updateBtn = document.querySelector("#update");
         if(!error) {
             updateBtn.innerHTML = "立即更新";
+            document.querySelector("#describe").innerHTML = data.describe || '无描述...';
             updateBtn.addEventListener("click", function(event) {
                 updateBtn.innerHTML = "正在升级，升级完毕应用将自动重启...";
                 setTimeout(function() {
