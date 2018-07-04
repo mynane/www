@@ -56,6 +56,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
+        check_update();
         document.querySelector("#check_update").addEventListener("click", check_update)
         console.log('Received Event: ' + id);
     }
