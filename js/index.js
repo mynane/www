@@ -27,7 +27,7 @@ function check_update() {
                     chcp.installUpdate(function(error) {
                         updateBtn.innerHTML = "更新完成";
                     })
-                })
+                }, 4000)
             })
         } else {
             updateBtn.innerHTML = "你当前是最新版本";
