@@ -40,6 +40,9 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        window.onerror = function(error) {
+            alert(error);
+        }
     },
 
     // deviceready Event Handler
