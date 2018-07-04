@@ -18,6 +18,7 @@
  */
 function check_update() {
     chcp.fetchUpdate(function(error, data) {
+        alert(data);
         var updateBtn = document.querySelector("#update");
         if(!error) {
             updateBtn.innerHTML = "立即更新";
@@ -45,7 +46,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        document.querySelector("#check_update").addEventListener("click", check_update)
     },
 
     // Update DOM on a Received Event
@@ -57,6 +57,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
+        document.querySelector("#check_update").addEventListener("click", check_update)
         console.log('Received Event: ' + id);
     }
 };
