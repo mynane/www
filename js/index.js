@@ -21,7 +21,7 @@ function check_update() {
         var updateBtn = document.querySelector("#update");
         if(!error) {
             updateBtn.innerHTML = "立即更新";
-            alert(JSON.stringify(data.describe));
+            alert(JSON.stringify(JSON.stringify(data), data.describe));
 
             document.querySelector("#describe").innerHTML = data.describe || '无描述...';
             updateBtn.addEventListener("click", function(event) {
