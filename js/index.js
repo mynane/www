@@ -18,7 +18,7 @@
  */
 function check_update() {
     chcp.fetchUpdate(function(error, data) {
-        alert(data);
+        alert(JSON.stringify(data));
         var updateBtn = document.querySelector("#update");
         if(!error) {
             updateBtn.innerHTML = "立即更新";
